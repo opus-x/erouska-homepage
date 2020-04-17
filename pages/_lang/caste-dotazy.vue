@@ -7,11 +7,11 @@
         <main class="main main--flex" role="main">
             <div>
                 <section class="section" v-for="(section, s_index) in sections" :id="section.section_anchor">
-                    <h2 :class="'section__title section__title--' + section.color" v-if="s_index != 0">{{ $t('web.faq.sections.' + section.section_id) }}</h2>
+                    <h2 :class="'section__title section__title--' + section.color" v-if="s_index != 0">{{ $t('web.faq.sections.' + section.section_id + '.title') }}</h2>
                     <div class="section__content">
                         <div class="faq">
                             <div v-for="(question, q_index) in section.questions" :id="question.anchor"
-                            :class="[q_index == 0 ? 'faq__item--open' : '', 'section__item faq__item']">
+                            :class="[(s_index + q_index == 0) ? 'faq__item--open' : '', 'section__item faq__item']">
                                 <h3 class="faq__q">{{ $t('web.faq.questions.' + question.id + '.question') }}</h3>
                                 <div class="faq__a">
                                     <template v-for="(item, index) in Object.keys($i18n.messages[$i18n.fallbackLocale].web.faq.questions[question.id].answer).length">
@@ -26,14 +26,14 @@
                 </section>
             </div>
             <div>
-                <box/>
+                <menu-box/>
             </div>
         </main>
     </div>
 </template>
 
 <script>
-    import Box from '~/components/Box.vue'
+    import MenuBox from '~/components/MenuBox.vue'
     import sectionsJson from '~/assets/faq.json'
 
     export default {
@@ -43,7 +43,7 @@
             }
         },
         components: {
-            Box
+            MenuBox
         },
         head() {
             return {

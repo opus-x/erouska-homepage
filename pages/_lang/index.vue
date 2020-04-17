@@ -102,19 +102,19 @@
                 </section>
             </div>
             <div>
-                <box/>
+                <download-box/>
             </div>
         </main>
     </div>
 </template>
 
 <script>
-    import Box from '~/components/Box.vue'
+    import DownloadBox from '~/components/DownloadBox.vue'
     import {getHomeUrl} from "../../lib/url";
 
     export default {
         components: {
-            Box
+            DownloadBox
         },
         head() {
             return {
