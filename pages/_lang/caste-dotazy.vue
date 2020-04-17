@@ -6,8 +6,8 @@
 
         <main class="main main--flex" role="main">
             <div>
-                <section class="section" v-for="section in sections" :id="section.section_anchor">
-                    <h2 :class="'section__title section__title--' + section.color">{{ $t('web.faq.sections.' + section.section_id) }}</h2>
+                <section class="section" v-for="(section, s_index) in sections" :id="section.section_anchor">
+                    <h2 :class="'section__title section__title--' + section.color" v-if="s_index != 0">{{ $t('web.faq.sections.' + section.section_id) }}</h2>
                     <div class="section__content">
                         <div class="faq">
                             <div v-for="(question, q_index) in section.questions" :id="question.anchor"
