@@ -1,10 +1,10 @@
 .aside {
-    position: absolute;
-    top: 140px;
-    left: 50%;
+    position: sticky;
+    top: 30px;
 
     width: 280px;
-    margin-left: 320px;
+    margin-left: auto;
+    margin-top: 140px;
     padding: 40px;
 
     text-align: center;
@@ -14,12 +14,7 @@
     background: linear-gradient(180deg, rgba(228, 249, 254, 1) 0%, rgba(245, 254, 253, 1) 100%);
 
     .page-homepage & {
-        top: 440px;
-    }
-
-    &.fixed {
-        position: fixed;
-        top: 30px;
+        margin-top: 440px;
     }
 }
 
