@@ -1,5 +1,5 @@
 <template>
-    <div class="aside js-sticky d-none d-xl-block">
+    <div class="aside d-none d-xl-block">
         <h3 class="aside__title">{{ $t('web.faq.sections.table_of_contents') }}</h3>
         <ul class="aside__actions">
             <li v-for="(section, s_index) in sections">
