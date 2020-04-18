@@ -31,6 +31,10 @@ body {
 
     background: url('/img/deco-top.png') no-repeat center 0;
 
+    @include respond-to('xlarge') {
+        padding: 0 40px;
+    }
+
     &.page-single {
         background: url('/img/deco-top-2.png') no-repeat center -140px;
     }
